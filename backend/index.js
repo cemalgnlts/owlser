@@ -80,7 +80,7 @@ app.post("/run", async (req, res) => {
 	} catch(err) {
 		console.error(err);
 
-		output = err.toString();
+		output = err.stack;
 		status = false;
 	} finally {
 		await browser.close();

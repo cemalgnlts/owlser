@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "dev": "nodemon -e js"
+    "dev": "nodemon -e js --delay 10"
   },
   "keywords": [],
   "author": "",
