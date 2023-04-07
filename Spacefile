@@ -1,0 +1,25 @@
+# Spacefile Docs: https://go.deta.dev/docs/spacefile/v0
+v: 0
+app_name: "Owlser"
+icon: "./app-icon.png"
+micros:
+  - name: "frontend"
+    src: "./frontend"
+    engine: "static"
+    primary: true
+    serve: "dist/"
+    dev: "npm run dev"
+    commands:
+      - "npm run build"
+
+  - name: "backend"
+    src: "./backend"
+    engine: "nodejs16"
+    run: "node index.js"
+    path: "/api"
+    dev: "npm run dev"
+    presets:
+      env:
+        - name: "BROWSERLESS_API_KEY"
+          description: "Your browserless.io api key"
+          default: "4466e4ec-6bfc-41fa-8167-65e7225d0a70"

@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.cm-theme {
+  height: 100%;
+  font-size: 1rem;
+  font-family: monospace;
+}
+
+@layer base {
+  html {
+    font-family: Poppins, Roboto, sans-serif;
+  }
+  
+  html, body, #root {
+    height: 100vh;
+  }
+
+	.content {
+		/* full height - navbar - toolbar */
+		height: calc(100% - 64px - 32.4px);
+	}
+}

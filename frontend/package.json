@@ -1,0 +1,30 @@
+{
+  "name": "owlser",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@codemirror/lang-javascript": "^6.1.4",
+    "@uiw/codemirror-theme-dracula": "^4.19.11",
+    "@uiw/react-codemirror": "^4.19.11",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.10.0"
+  },
+  "devDependencies": {
+    "@heroicons/react": "^2.0.17",
+    "@tailwindcss/typography": "^0.5.9",
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.11",
+    "@vitejs/plugin-react": "^3.1.0",
+    "autoprefixer": "^10.4.14",
+    "daisyui": "^2.51.5",
+    "postcss": "^8.4.21",
+    "tailwindcss": "^3.3.1",
+    "vite": "^4.2.1"
+  }
+}
