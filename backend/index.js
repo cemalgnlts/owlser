@@ -52,7 +52,7 @@ app.post("/save", async (req, res) => {
 	});
 });
 
-app.post("/execute", async (req, res) => {
+app.post("/run", async (req, res) => {
 	let output = null;
 	let status = true;
 	let browser;

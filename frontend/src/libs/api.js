@@ -1,5 +1,7 @@
+const BASE_URL = "/api"
+
 export async function executeCode() {
-	const req = await fetch("/api/execute", {
+	const req = await fetch(`${BASE_URL}/run`, {
 		method: "POST",
 		headers: { 
 			"content-type": "text/plain",
@@ -15,7 +17,7 @@ export async function executeCode() {
 }
 
 export async function saveCode() {
-	const req = await fetch("/api/save", {
+	const req = await fetch(`${BASE_URL}/save`, {
 		method: "POST",
 		headers: { "content-type": "text/plain" },
 		body: localStorage.getItem("value")
