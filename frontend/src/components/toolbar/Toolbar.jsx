@@ -16,6 +16,8 @@ import devices from "../../libs/devices.json";
 
 import { saveCode } from "../../libs/api";
 
+const emulation = localStorage.getItem("emulation") ?? "none";
+
 function Toolbar({ execute, editorUndo, editorRedo }) {
   const { canSave, canRedo, canUndo } = useEditorStates();
   const [executeStarted, setExecuteStarted] = useState(false);
@@ -99,12 +101,11 @@ function Toolbar({ execute, editorUndo, editorRedo }) {
         className="select select-xs self-center bg-base-300 mr-1 w-full shrink sm:w-auto"
         onChange={onEmulationDevice}
       >
-        <option disabled value="no-emulation" selected>
+        <option value="no-emulation" selected={emulation === "none" ? true : false}>
           Device Emulation
         </option>
-        <option value="no-emulation">No emulation</option>
         {devices.map((device, index) => (
-          <option key={index} value={device}>
+          <option key={index} value={device} selected={emulation === device ? true : false}>
             {device}
           </option>
         ))}

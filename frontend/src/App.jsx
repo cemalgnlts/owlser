@@ -5,6 +5,7 @@ import Editor from "./components/editor";
 import TabMenu from "./components/tabmenu";
 import Toolbar from "./components/toolbar";
 import Docs from "./components/docs";
+import Info from "./components/info";
 
 import { executeCode } from "./libs/api";
 
@@ -44,6 +45,7 @@ function Root() {
         <main className="h-full grow overflow-hidden">
 					{ tabIndex === 0 && <Editor setEditorUndo={setEditorUndo} setEditorRedo={setEditorRedo} /> }
 					{ tabIndex === 1 && <Docs /> }
+					{ tabIndex === 2 && <Info /> }
         </main>
         <div className="bg-base-300 w-56 md:w-72 lg:w-80 xl:w-96 -mt-8 p-2 shrink-0 overflow-hidden z-10 hidden md:block" style={{ display: isLogsVisible && "flex" }}>
           <h3 className="text-md font-bold">Logs</h3>

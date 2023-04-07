@@ -19,8 +19,6 @@ function Navbar() {
 		setTheme
   } = useNavbarContext();
 
-	console.log("rendered");
-
   const toggleTabMenu = ev => {
 		const checked = ev.target.checked;
 

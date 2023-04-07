@@ -4,6 +4,7 @@ import { PencilIcon, DocumentTextIcon, InformationCircleIcon } from "@heroicons/
 function TabMenu({ tabIndex, setTabIndex }) {
 	const showEditor = () => setTabIndex(0);
 	const showDocs = () => setTabIndex(1);
+	const showInfo = () => setTabIndex(2);
 
 	return (
 		<ul className="menu menu-compact bg-base-300 w-44 -mt-8">
@@ -19,7 +20,7 @@ function TabMenu({ tabIndex, setTabIndex }) {
 					Document
 				</a>
 			</li>
-			<li>
+			<li className={tabIndex === 2 ? "bordered" : ""} onClick={showInfo}>
 				<a>
 					<InformationCircleIcon className="w-6 h-6" />
 					Info

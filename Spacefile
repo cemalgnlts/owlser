@@ -22,4 +22,4 @@ micros:
       env:
         - name: "BROWSERLESS_API_KEY"
           description: "Your browserless.io api key"
-          default: "4466e4ec-6bfc-41fa-8167-65e7225d0a70"
+          default: "f5f24db9-01b8-43e1-ba50-df8e9bb86677"
