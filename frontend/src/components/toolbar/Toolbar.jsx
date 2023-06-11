@@ -101,11 +101,11 @@ function Toolbar({ execute, editorUndo, editorRedo }) {
         className="select select-xs self-center bg-base-300 mr-1 w-full shrink sm:w-auto"
         onChange={onEmulationDevice}
       >
-        <option value="no-emulation" selected={emulation === "none" ? true : false}>
+        <option value="no-emulation">
           Device Emulation
         </option>
         {devices.map((device, index) => (
-          <option key={index} value={device} selected={emulation === device ? true : false}>
+          <option key={index} value={device}>
             {device}
           </option>
         ))}

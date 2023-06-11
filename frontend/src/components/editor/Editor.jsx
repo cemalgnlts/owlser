@@ -21,13 +21,16 @@ function Editor({ setEditorUndo, setEditorRedo }) {
 	const dispatch = useEditorStateDispatch();
 	const [debounceCallback] = useDebounceCallback(autoSave, 500);
 	const editorRef = useRef(null);
-	const editorValue = useRef("");
+	const storedValue = localStorage.getItem('value');
+	const editorValue = useRef(storedValue ?? template);
 
 	useEffect(() => {
 		if(editorRef.current !== null) {
 			setEditorUndo(() => undo.bind(null, editorRef.current.view));
 			setEditorRedo(() => redo.bind(null, editorRef.current.view));
-			editorValue.current = localStorage.getItem("value") ?? template; 
+			if (!storedValue) {
+				localStorage.setItem('value', template);
+			  }
 		}
 	}, [editorRef.current]);
 

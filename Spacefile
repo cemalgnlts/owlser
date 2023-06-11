@@ -18,8 +18,3 @@ micros:
     run: "node index.js"
     path: "/api"
     dev: "npm run dev"
-    presets:
-      env:
-        - name: "BROWSERLESS_API_KEY"
-          description: "Your browserless.io api key"
-          default: "f5f24db9-01b8-43e1-ba50-df8e9bb86677"

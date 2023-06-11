@@ -2,7 +2,7 @@ function Docs() {
 	return (
 		<article className="prose mx-auto h-full p-4 overflow-y-auto">
 			<h1>Documents</h1>
-			<p>Owlser uses puppeteer with <a href="https://www.browserless.io" target="_blank">browserless.io</a> infrastructure. It gives you an interface and tools to automate your scanner operations.</p>
+			<p>Owlser uses a puppeteer that is shipped with this app.</p>
 
 			<h2>Getting started</h2>
 			<p>Owlser runs your code in its own scope. There are <code>page</code> and <code>upload</code> objects in the scope where your code will run.</p>
