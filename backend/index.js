@@ -1,9 +1,10 @@
 const express = require("express");
-const puppeteer = require("puppeteer-core");
+const chromium = require('@sparticuz/chromium');
+const pc = require("puppeteer-core");
+const puppeteer = require("puppeteer");
 const { Deta } = require("deta");
 
-const PORT = process.env.PORT || 3000;
-const BROWSERLESS_API_TOKEN = process.env.BROWSERLESS_API_KEY;
+
 const AsyncFunction = (async function() {}).constructor;
 
 const deta = new Deta();
@@ -57,12 +58,19 @@ app.post("/run", async (req, res) => {
 	let status = true;
 	let browser;
 
-	const device = puppeteer.devices[req.get("x-device-emulation")];
+	const device = puppeteer.KnownDevices[req.get("x-device-emulation")];
 
 	try {
-		browser = await puppeteer.connect({
-			browserWSEndpoint: `wss://chrome.browserless.io?token=${BROWSERLESS_API_TOKEN}&stealth&blockAds`
+		if (process.env.DETA_SPACE_APP) {
+			browser = await pc.launch({
+			args: chromium.args,
+			executablePath: await chromium.executablePath(),
+			headless: 'new',
+			ignoreHTTPSErrors: true
 		});
+		} else {
+			browser = await puppeteer.launch({headless: "new"});
+		}
 		const page = await browser.newPage();
 		page.setDefaultTimeout(18000);
 
@@ -92,4 +100,5 @@ app.post("/run", async (req, res) => {
 	});
 });
 
+const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => console.log(`Backend running on port ${PORT}!`));
