@@ -35,7 +35,7 @@ function Docs() {
 				<pre><code>const title = await page.title()</code></pre>
 				<br/>
 				<pre className="text-success"><code>// Let's upload the screenshot to Drive.</code></pre>
-				<pre><code>upload("ss.png", ss)</code></pre>
+				<pre><code>await upload("ss.png", ss)</code></pre>
 				<br/>
 				<pre className="text-success"><code>// Return the page title as a log record.</code></pre>
 				<pre><code>return &#96;Page title: $&#123;title&#125;&#96;</code></pre>
